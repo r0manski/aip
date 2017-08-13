@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/head.ejs %>
+</head>
+<body>
+<% include partials/header.ejs %>
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="well well-sm">
+        <form class="form-horizontal" action="/edit" method="get">
+          <fieldset>
+            <!-- Title -->
+            <div class="form-group">
+              <label for="subject" class="col-md-3 control-label"> Title </label>
+              <div class="col-md-9">
+                <input id="subject" name="subject" type="text" class="form-control" readonly value="<%= appdata.movie.title %>">
+              </div>
+            </div>
+
+            <!-- Release date -->
+            <div class="form-group">
+              <label class="col-md-3 control-label"> Release date</label>
+              <div class="col-md-9">
+                <input id="releasedate" name="releasedate" type="text" readonly value="<%= appdata.movie.releasedate %>" class="form-control">
+              </div>
+            </div>
+
+            <!-- Duration-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name"> Duration</label>
+              <div class="col-md-9">
+                <input id="name" name="duration" type="number" placeholder="Duration" class="form-control" readonly value="<%= appdata.movie.duration %>">
+              </div>
+            </div>
+            <!-- Genre-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="surname"> Genre </label>
+              <div class="col-md-9">
+                <input id="surname" name="surname" type="text" placeholder="Genre" class="form-control" readonly value="<%= appdata.movie.genre %>">
+              </div>
+            </div>
+
+            <!-- Synopsis -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Synopsis</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="synopsis" name="message" rows="5" readonly> <%= appdata.movie.synopsis %></textarea>
+              </div>
+            </div>
+
+            <!-- Form actions -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="whitespace"></label>
+            <div class="col-md-9">
+                <button type="submit" name="edit" value="submit" class="btn btn-warning btn-block"> Edit</button>
+            </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
